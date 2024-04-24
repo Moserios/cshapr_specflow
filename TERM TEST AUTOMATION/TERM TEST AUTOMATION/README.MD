@@ -1,0 +1,1 @@
+Please update in StepDefinitions\LoginPageStepDefinitions.cs the URL with your credentials and password according to Example

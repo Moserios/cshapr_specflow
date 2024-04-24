@@ -1,0 +1,61 @@
+Given User is at the login page
+-> done: LoginPageSteps.GivenUserIsAtTheLoginPage() (1.4s)
+When User enters "Admin" as a username
+-> done: LoginPageSteps.WhenUserEntersAsAUsername("Admin") (0.1s)
+And User clicks the login button
+-> done: LoginPageSteps.WhenUserClicksTheLoginButton() (0.1s)
+Then User should be at the Term Page
+-> done: LoginPageSteps.ThenUserShouldBeAtTheTermPage() (9.7s)
+Given There is existing TERM with the following parameters:
+  --- table step argument ---
+  | Key         | Value            |
+  | KeyTerm     | unchecked        |
+  | Category    | Basic Terms      |
+  | TermName    | ShortName        |
+  | Description | ShortDescription |
+  | Summary     | ShortSummary     |
+-> done: TermPageStepDefinitions.GivenThereIsExistingTERMWithTheFollowingParameters(<table>) (7.3s)
+When User changes 'Category/Subcategory' dropdown to "-- Select Category --"
+-> done: TermPageStepDefinitions.WhenUserSelectsInDropdown("-- Select Categor...") (0.1s)
+And User changes 'Term Name' field to ""
+-> done: TermPageStepDefinitions.WhenUserEntersInField("") (0.1s)
+And User changes 'Description' field to ""
+-> done: TermPageStepDefinitions.WhenUserEntersInDescriptionFieldIfProvided("") (0.0s)
+And User changes 'Summary' field to ""
+-> done: TermPageStepDefinitions.WhenUserEntersInSummaryField("") (0.1s)
+And User clicks 'Save' button
+-> done: TermPageStepDefinitions.ThenUserClicksSaveButton() (0.1s)
+Then 'Category/Subcategory dropdown' error is 'Shown' with message 'Error: Category must be specified.'
+-> done: TermPageStepDefinitions.ThenErrorVisibilityIsWithMessage("Category/Subcateg...", "Shown", "Error: Category m...") (0.0s)
+And 'Term Name field empty' error is 'Shown' with message 'Error: Term Name must be specified.'
+-> done: TermPageStepDefinitions.ThenErrorVisibilityIsWithMessage("Term Name field e...", "Shown", "Error: Term Name ...") (0.0s)
+And 'Term Name field length' error is 'Hidden' with message 'Error: Term Name has exceeded maximum of 256 characters.'
+-> done: TermPageStepDefinitions.ThenErrorVisibilityIsWithMessage("Term Name field l...", "Hidden", "Error: Term Name ...") (0.0s)
+And 'Description field length' error is 'Hidden' with message 'Error: Description has exceeded maximum of 256 characters.'
+-> done: TermPageStepDefinitions.ThenErrorVisibilityIsWithMessage("Description field...", "Hidden", "Error: Descriptio...") (0.0s)
+And 'Summary field empty' error is 'Shown' with message 'Error: Summary must be specified.'
+-> done: TermPageStepDefinitions.ThenErrorVisibilityIsWithMessage("Summary field empty", "Shown", "Error: Summary mu...") (0.1s)
+And User clicks 'Cancel' button
+-> done: TermPageStepDefinitions.WhenUserClicksCancelButton() (0.1s)
+And User searches for "ShortName" in 'Search field' and clicks
+-> done: TermPageStepDefinitions.ThenUserSearchesForInSearchFieldAndClicks("ShortName") (1.7s)
+And Template has "unchecked" state
+-> done: TermPageStepDefinitions.ThenTemplateHasState("unchecked") (0.1s)
+And Template has 'Category/Subcategory' like "Basic Terms"
+-> done: TermPageStepDefinitions.ThenTemplateHasCategorySubcategoryFrom("Basic Terms") (0.1s)
+And Template has 'Term Name' like "ShortName"
+-> done: TermPageStepDefinitions.ThenTemplateHasTermNameFrom("ShortName") (0.0s)
+And Template has 'Term Template Key' like "ShortName"
+-> done: TermPageStepDefinitions.ThenTemplateHasTermTemplateKeyFrom("ShortName") (0.0s)
+And Template has 'Description' like "ShortDescription" (if provided)
+-> done: TermPageStepDefinitions.ThenTemplateHasDescriptionFromIfProvided("ShortDescription") (0.0s)
+And Template has 'Summary' like "ShortSummary"
+-> done: TermPageStepDefinitions.ThenTemplateHasSummaryFrom("ShortSummary") (0.0s)
+And User clicks 'Delete' button
+-> done: TermPageStepDefinitions.ThenUserClicksDeleteButtonToDeleteTheCreatedTerm() (0.1s)
+And Alert with message 'Template has been removed' appears
+-> done: TermPageStepDefinitions.ThenAlertWithMessageAppears("Template has been...") (1.2s)
+And User checks the Template with name "ShortName" not found
+Looking for TERM: Short Name 123 !@#$%^&*()_+-=~`{}\|/*<>,.?'"
+No TERM was found, as expected.
+-> done: TermPageStepDefinitions.ThenChecksTheTemplateWithNameNotFound("ShortName") (2.5s)
